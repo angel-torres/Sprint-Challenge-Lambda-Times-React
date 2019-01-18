@@ -1,11 +1,20 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const StyledTab = styled.div`
+  padding: 0 20px;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+`;
 
 const Tab = props => {
   /* Using your props, determine if the `tab` prop matches the `selectedTab` prop, 
       if they match, the className should be: 'tab active-tab', 
       if it is not it should just be 'tab'*/
   return (
-    <div
+    <StyledTab
       className={''}
       onClick={() => {
         /* Replace this dummy click handler function with your selectTabHandler function from props 
@@ -13,7 +22,7 @@ const Tab = props => {
       }}
     >
       {props.tab.toUpperCase()}
-    </div>
+    </StyledTab>
   );
 };
 
