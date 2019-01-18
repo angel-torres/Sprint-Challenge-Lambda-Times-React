@@ -26,12 +26,9 @@ export default class Content extends Component {
 
   changeSelected = tab => {
     // this function should take in the tab and update the state with the new tab.
-    console.log(this.state)
-    console.log(tab.target.innerText.toLowerCase())
     this.setState({
       selected: tab.target.innerText.toLowerCase(),
     })
-    console.log(this.state)
   };
 
   filterCards = () => {
@@ -47,7 +44,9 @@ export default class Content extends Component {
           of the items from cardData. 
         - else, it should only return those cards whose 'tab' matched this.state.selected.
     */
-    return this.state.cards;
+
+
+    return (this.state.selected === "all" ? this.state.cards : this.state.cards.filter( card => card.tab.toLowerCase() === this.state.selected))
   };
 
   render() {
