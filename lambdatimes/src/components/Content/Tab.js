@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledTab = styled.div`
   padding: 0 20px;
@@ -32,5 +33,11 @@ class Tab extends React.Component {
 
 };
 // Make sure you include PropTypes on your props.
+
+Tab.propTypes = {
+  tab: PropTypes.string,
+  selectedTab: PropTypes.string,
+  changeSelected: PropTypes.func
+}
 
 export default Tab;

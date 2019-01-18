@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 
 const Cards = props => {
@@ -9,6 +10,11 @@ const Cards = props => {
       {props.cards.map(card => <Card card={card} />)}
     </div>
   )
+}
+
+Cards.propTypes = {
+  cards: PropTypes.array,
+  selectedTab: PropTypes.string,
 }
 
 // Make sure you include prop types for all of your incoming props
