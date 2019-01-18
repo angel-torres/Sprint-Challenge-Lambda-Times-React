@@ -9,23 +9,28 @@ const StyledTab = styled.div`
   }
 `;
 
-const Tab = props => {
+class Tab extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
   /* Using your props, determine if the `tab` prop matches the `selectedTab` prop, 
       if they match, the className should be: 'tab active-tab', 
       if it is not it should just be 'tab'*/
-  return (
-    <StyledTab
-      className={''}
-      onClick={() => {
-        /* Replace this dummy click handler function with your selectTabHandler function from props 
-         you'll need to pass the `tab` in as an argument to this handler. */
-      }}
-    >
-      {props.tab.toUpperCase()}
-    </StyledTab>
-  );
-};
 
+  render() {
+    return (
+      <StyledTab
+        className={this.props.tab === this.props.selectedTab ? "tab active-tab" : "tab"}
+        onClick={this.props.changeSelected}
+      >
+        {this.props.tab.toUpperCase()}
+      </StyledTab>
+    );
+  }
+
+};
 // Make sure you include PropTypes on your props.
 
 export default Tab;
